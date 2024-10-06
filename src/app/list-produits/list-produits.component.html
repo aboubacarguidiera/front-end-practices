@@ -1,0 +1,29 @@
+
+
+<!--<div class="container">
+  <div class="row">
+    @for (product of products; track product.nom) {
+      <div class="col-md-6 border product-card ">
+        <h1>{{ product.nom }}</h1>
+        <img [src]="product.imageUrl" alt="{{ product.nom }}" width="200px" height="250px" class="image-container">
+        <h2>{{ product.description }}</h2>
+      </div>
+    }
+  </div>
+</div>-->
+<app-navbar [panier]="displayPanier" (panierSelected)="showPanier($event)"></app-navbar>
+
+<div>
+  @if(products.length>0 && !displayPanier){
+  <div class="row">
+    @for (product of products; track product.id) {
+      <div class="col-lg-3 col-md-6 col-sm-6">
+       <app-produit-item [product]="product" (selectedProduct)="onProductAdded($event)"></app-produit-item>
+      </div>
+    }
+  </div>
+}
+@if(displayPanier===true){
+  <app-panier [detailsPanier]="detailProduit"></app-panier>
+}
+</div>

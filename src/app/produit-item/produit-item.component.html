@@ -1,0 +1,20 @@
+<div class="card">
+  <img [src]="product.imageUrl" style="width: 200px; height: 150px;" class="card-img-top d-block mx-auto" alt="{{ product.nom }}">
+  <span class="pl-4" [style.color]="getColor()">{{getState()}}</span>
+
+  <div class="card-body">
+    <div class="d-flex flex-column align-items-center">
+      <h5 class="card-title d-flex justify-content-between align-items-center">{{ product.nom }}</h5>
+      <p>{{ product.description }}</p>
+    </div>
+    <div class="d-flex justify-content-between align-items-center w-100">
+      <p class="mb-0">{{ product.prix }} €</p>
+      <!-- Utilisation correcte de *ngIf -->
+       @if(product.stock>0){
+        <button type="button" (click)="addToPanier()" class="btn btn-primary">Ajouter au panier</button>
+       }
+
+      <!-- Affichage du statut en utilisant ngStyle pour la couleur -->
+    </div>
+  </div>
+</div>

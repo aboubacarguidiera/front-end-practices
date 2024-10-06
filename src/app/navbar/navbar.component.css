@@ -1,0 +1,20 @@
+nav.navbar {
+    background-color: #004085; /* Custom dark blue background */
+    
+    .navbar-brand {
+      color: #fff;
+      font-weight: bold;
+  
+      &:hover {
+        color: #cce5ff; /* Light blue on hover */
+      }
+    }
+  
+    .nav-link {
+      color: #fff;
+  
+      &:hover {
+        color: #cce5ff;
+      }
+    }
+  }
